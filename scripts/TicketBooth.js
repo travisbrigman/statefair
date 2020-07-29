@@ -18,6 +18,10 @@ eventHub.addEventListener("click", clickEvent => {
         const sideshowEvent = new CustomEvent("sideshowTicketPurchased")
         eventHub.dispatchEvent(sideshowEvent)
     }
+    if (clickEvent.target.id === "fullPackageTicket") {
+        const fullPackageTicketEvent = new CustomEvent("fullPackageTicketPurchased")
+        eventHub.dispatchEvent(fullPackageTicketEvent)
+    }
 })
 
 export const TicketBooth = () => {
