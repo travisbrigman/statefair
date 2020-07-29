@@ -1,4 +1,5 @@
 const contentTarget = document.querySelector(".entry")
+const counterContentTarget = document.querySelector(".customers")
 const eventHub = document.querySelector("#state-fair")
 
 eventHub.addEventListener("click", clickEvent => {
@@ -23,6 +24,43 @@ eventHub.addEventListener("click", clickEvent => {
         eventHub.dispatchEvent(fullPackageTicketEvent)
     }
 })
+
+let totalTicketsSold = 0
+
+export const TicketCounter = () => {
+    
+    counterContentTarget.innerHTML = `<h3>Total tickets purchased: ${totalTicketsSold}</h3>`
+}
+
+export const TicketListener = () => {
+    
+    eventHub.addEventListener("fullPackageTicketPurchased", customEvent => {
+        totalTicketsSold+= 4
+        TicketCounter()                                  
+                }) 
+    eventHub.addEventListener("sideshowTicketPurchased", customEvent => {
+        totalTicketsSold++
+        TicketCounter()                                  
+                }) 
+    eventHub.addEventListener("gameTicketPurchased", customEvent => {
+        totalTicketsSold++
+        TicketCounter()                                  
+                }) 
+    eventHub.addEventListener("foodTicketPurchased", customEvent => {
+        totalTicketsSold++
+        TicketCounter()                                  
+                }) 
+    eventHub.addEventListener("rideTicketPurchased", customEvent => {
+        totalTicketsSold++
+        TicketCounter()                                  
+                }) 
+}
+
+
+
+
+
+
 
 export const TicketBooth = () => {
     contentTarget.innerHTML = `

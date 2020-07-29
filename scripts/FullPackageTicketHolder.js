@@ -11,6 +11,7 @@ export const FullPackageTicketHolders = () => {
         foodContentTarget.innerHTML +=  `<div class="person bigSpender"> </div>`
         gameContentTarget.innerHTML +=  `<div class="person bigSpender"> </div>`
         sideshowContentTarget.innerHTML +=  `<div class="person bigSpender"> </div>`
+        
                                     
     }) 
 
